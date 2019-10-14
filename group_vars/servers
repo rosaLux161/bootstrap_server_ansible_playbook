@@ -1,8 +1,0 @@
----
-ssh_port: 5930
-ansible_user: jan
-ansible_become: yes
-ansible_port: 22
-new_user: jan
-h_name: devjl.de
-password_hash: ***REMOVED***

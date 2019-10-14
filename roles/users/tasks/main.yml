@@ -1,0 +1,8 @@
+- name: Create user
+  user:
+    name: "{{ new_user }}"
+    shell: /bin/bash
+    group: users
+    groups: sudo
+    append: true
+    password: ***REMOVED***

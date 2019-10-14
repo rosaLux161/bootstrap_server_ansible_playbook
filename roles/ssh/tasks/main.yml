@@ -1,0 +1,28 @@
+---
+ - name: Create sshers group
+   group:
+     name: sshers
+
+ - name: Add user to sshers group
+   user:
+     name: "{{ new_user }}"
+     groups: sshers
+     append: true
+
+ - name: config sshd
+   template:
+######### todo: check sshd config file
+     src: sshd_config.j2
+     dest: /etc/ssh/sshd_config
+     owner: root
+     group: root
+     mode: 0644
+   notify:
+     - Restart SSH service
+
+ - name: Auth user for ssh key
+   authorized_key:
+     user: "{{ new_user }}"
+     state: present
+     key: "{{ lookup('file', '/home/jan/.ssh/id_rsa.pub') }}"
+  #   key: "{{ lookup('file', '"{{ id_rsa_pub_path }}"') }}"

@@ -1,0 +1,8 @@
+---
+- hosts: servers
+  roles:
+    - apt_upgrade
+    - tools
+    - hostnames
+    - users
+    - ssh

@@ -1,4 +1,4 @@
 ---
 - name: Set hostname
   hostname:
-    name: "{{ h_name | default('janluetzler.de') }}"
+    name: "{{ h_name ) }}"

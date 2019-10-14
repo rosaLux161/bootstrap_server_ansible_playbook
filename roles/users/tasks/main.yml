@@ -5,4 +5,4 @@
     group: users
     groups: sudo
     append: true
-    password: ***REMOVED***
+    password: "{{ password_hash }}"

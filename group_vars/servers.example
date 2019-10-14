@@ -2,6 +2,7 @@
 ssh_port: 22
 ansible_user: root
 ansible_become: no
+ansible_port: 22
 new_user:
 h_name:
 password_hash:
